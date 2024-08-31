@@ -11,7 +11,7 @@ import numpy as np
 from logparser import Spell, Drain
 
 # get [log key, delta time] as input for deeplog
-input_dir  = os.path.expanduser('~/.dataset/hdfs/')
+input_dir  = os.path.expanduser('~/data/hdfs/')
 output_dir = '../output/hdfs/'  # The output directory of parsing results
 log_file   = "HDFS.log"  # The input log file name
 
@@ -29,7 +29,7 @@ def mapping():
 
 
 def parser(input_dir, output_dir, log_file, log_format, type='drain'):
-    if type == 'spell':
+    if type == 'spell': 
         tau        = 0.5  # Message type threshold (default: 0.5)
         regex      = [
             "(/[-\w]+)+", #replace file path with *
