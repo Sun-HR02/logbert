@@ -170,11 +170,11 @@ class Trainer():
                 for i, data in data_iter:
                     data = {key: value.to(self.device) for key, value in data.items()}
 
-                    print(data)
+                    # print(data)
 
                     result = self.trainer.model.forward(data["bert_input"], data["time_input"])
 
-                    print(result.shape)
+                    # print(result.shape)
 
                     cls_output = result["cls_output"]
 
