@@ -127,8 +127,13 @@ class LogDataset(Dataset):
 
         output["bert_input"] = torch.tensor(output["bert_input"], dtype=torch.long)
         output["bert_label"] = torch.tensor(output["bert_label"], dtype=torch.long)
-        print(output["time_input"])
+        # output["time_input"] = torch.tensor(output["time_input"], dtype=torch.float)
+
+        # 先将列表中的 numpy 数组合并成一个数组
+        output["time_input"] = np.array(output["time_input"])
+        # 再将合并后的数组转换为张量
         output["time_input"] = torch.tensor(output["time_input"], dtype=torch.float)
+        
         output["time_label"] = torch.tensor(output["time_label"], dtype=torch.float)
 
         return output
